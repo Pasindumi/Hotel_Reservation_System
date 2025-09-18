@@ -65,7 +65,6 @@
         .icons{
             display: flex;
             width: 100%;
-            /* background-color: black; */
         }
         .icons img{
             padding: 1%;
@@ -139,6 +138,19 @@
             color: white;
             opacity: 0.5;
         }
+
+        /* Search bar styling */
+        .search-bar {
+            text-align: center;
+            margin: 20px 0;
+        }
+        #roomSearch {
+            width: 50%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -150,7 +162,7 @@
             </div>
             <div class="navbar-contents">
                 <div class="navbar_home navbar-element">
-                    <a class="navbar_a" href="./index.html#home-nav">HOME</a>
+                    <a class="navbar_a" href="static/php/index.php">HOME</a>
                 </div>
                 <div class="navbar_about navbar-element">
                     <a class="navbar_a" href="./index.html#about-nav">ABOUT</a>
@@ -181,8 +193,16 @@
         <h2 class="heading">Book A Room</h2>
         <h3 class="sub-heading">Our Rooms</h3>
         <hr/>
+
+        <!-- Search bar -->
+        <div class="search-bar">
+            <input type="text" id="roomSearch" placeholder="Search by bed type (e.g., Single, Double, King)" onkeyup="filterRooms()">
+        </div>
+
         <div class="result"> </div>
         <hr/>
+        
+        <!-- Room 1 -->
         <div class="room" id="room1">
             <div class="image">
                 <img src="static/images/juniorSuite.webp" alt="">
@@ -192,60 +212,40 @@
                 <p>Our Junior Suites offer breathtaking views of the city skyline.</p>
                 <ul>
                     <li>Size: 260 sq ft</li>
-                    <li>Beds: 2 Double(s)</li>
+                    <li>Beds: Single</li>
                 </ul>
                 <br/>
                 <hr>
                 <br/>
-
                 <div class="icons">
-                    <div class="am">
-                        <img id="am_ac" src="static/icons/AC.png" alt="">
-                        <span class="span_am"> A/C </span>
-                    </div>
-                    <div class="am">
-                        <img id="am_wifi" src="static/icons/wifi.png" alt="">
-                        <span class="span_am">wifi</span>
-                    </div>
-                    <div class="am">
-                        <img id="am_tv" src="static/icons/tv.png" alt="">
-                        <span class="span_am"> TV </span>
-                    </div>
-                    <div class="am">
-                        <img id="am_safe" src="static/icons/safe.png" alt="">
-                        <span class="span_am"> safe </span>
-                    </div>
-                    <div class="am">
-                        <img id="am_minibar" src="static/icons/minibar.png" alt="">
-                        <span class="span_am"> bar </span>
-                    </div>
-                    <div class="am">
-                        <img id="am_telephone" src="static/icons/telephone.png" alt="">
-                        <span class="span_am"> phone </span>
-                    </div>
-                    <div class="am">
-                        <img id="am_kitchen" src="static/icons/kitchen.png" alt="">
-                        <span class="span_am"> kitchen</span>
-                    </div>
-                    <div class="am">
-                        <img id="am_shower" src="static/icons/shower.png" alt="">
-                        <span class="span_am"> shower </span>
-                    </div>   
+                    <div class="am"><img id="am_ac" src="static/icons/AC.png" alt=""><span class="span_am"> A/C </span></div>
+                    <div class="am"><img id="am_wifi" src="static/icons/wifi.png" alt=""><span class="span_am">wifi</span></div>
+                    <div class="am"><img id="am_tv" src="static/icons/tv.png" alt=""><span class="span_am"> TV </span></div>
+                    <div class="am"><img id="am_safe" src="static/icons/safe.png" alt=""><span class="span_am"> safe </span></div>
+                    <div class="am"><img id="am_minibar" src="static/icons/minibar.png" alt=""><span class="span_am"> bar </span></div>
+                    <div class="am"><img id="am_telephone" src="static/icons/telephone.png" alt=""><span class="span_am"> phone </span></div>
+                    <div class="am"><img id="am_kitchen" src="static/icons/kitchen.png" alt=""><span class="span_am"> kitchen</span></div>
+                    <div class="am"><img id="am_shower" src="static/icons/shower.png" alt=""><span class="span_am"> shower </span></div>   
                 </div>
             </div>
             <div class="price">
                 <p>From</p>
                 <h1>₹ 18,000</h1>
-                <form action="">
-                    <button class="book_now" type="submit">
-                        <a href="./checkout.html">Book Now</a> 
-                    </button>
-                </form>
+               <form action="static/php/book_room.php" method="POST">
+    <input type="hidden" name="room_id" value="R1">
+    <input type="hidden" name="room_name" value="Junior Suite">
+    <input type="hidden" name="room_size" value="260 sq ft">
+    <input type="hidden" name="room_bed" value="Single">
+    <input type="hidden" name="price" value="18000">
+    <button class="book_now" type="submit">Book Now</button>
+</form>
+
             </div>
         </div>
 
         <hr/>
 
+        <!-- Room 2 -->
         <div class="room" id="room2">
             <div class="image">
                 <img src="static/images/standardHotelRoom.jpeg" alt="">
@@ -255,55 +255,38 @@
                 <p>Our Standard Rooms are the perfect combination of function and comfort.</p>
                 <ul>
                     <li>Size: 230 sq ft</li>
-                    <li>Beds: 1 Double(s)</li>
+                    <li>Beds: Double</li>
                 </ul>
                 <hr/>
                 <br/>
                 <div class="icons">
-                    <div class="am">
-                        <img id="am_ac" src="static/icons/AC.png" alt="">
-                        <span class="span_am"> A/C </span>
-                    </div>
-                    <div class="am">
-                        <img id="am_wifi" src="static/icons/wifi.png" alt="">
-                        <span class="span_am">wifi</span>
-                    </div>
-                    <div class="am">
-                        <img id="am_tv" src="static/icons/tv.png" alt="">
-                        <span class="span_am"> TV </span>
-                    </div>
-                    <div class="am">
-                        <img id="am_safe" src="static/icons/safe.png" alt="">
-                        <span class="span_am"> safe </span>
-                    </div>
-                    <div class="am">
-                        <img id="am_minibar" src="static/icons/minibar.png" alt="">
-                        <span class="span_am"> bar </span>
-                    </div>
-                    <div class="am">
-                        <img id="am_telephone" src="static/icons/telephone.png" alt="">
-                        <span class="span_am"> phone </span>
-                    </div>
-                    <div class="am">
-                        <img id="am_kitchen" src="static/icons/kitchen.png" alt="">
-                        <span class="span_am"> kitchen</span>
-                    </div>
+                    <div class="am"><img id="am_ac" src="static/icons/AC.png" alt=""><span class="span_am"> A/C </span></div>
+                    <div class="am"><img id="am_wifi" src="static/icons/wifi.png" alt=""><span class="span_am">wifi</span></div>
+                    <div class="am"><img id="am_tv" src="static/icons/tv.png" alt=""><span class="span_am"> TV </span></div>
+                    <div class="am"><img id="am_safe" src="static/icons/safe.png" alt=""><span class="span_am"> safe </span></div>
+                    <div class="am"><img id="am_minibar" src="static/icons/minibar.png" alt=""><span class="span_am"> bar </span></div>
+                    <div class="am"><img id="am_telephone" src="static/icons/telephone.png" alt=""><span class="span_am"> phone </span></div>
+                    <div class="am"><img id="am_kitchen" src="static/icons/kitchen.png" alt=""><span class="span_am"> kitchen</span></div>
                 </div>
             </div>
             <div class="price">
                 <p>From</p>
                 <h1>₹ 12,000</h1>
-                <form action="">
-                    <button class="book_now" type="submit">
-                        <a href="./checkout.html">Book Now</a> 
-                    </button>
-                </form>
-                
+                <form action="static/php/book_room.php" method="POST">
+    <input type="hidden" name="room_id" value="R2">
+    <input type="hidden" name="room_name" value="Standard Room">
+    <input type="hidden" name="room_size" value="230 sq ft">
+    <input type="hidden" name="room_bed" value="Double">
+    <input type="hidden" name="price" value="12000">
+    <button class="book_now" type="submit">Book Now</button>
+</form>
+
             </div>
         </div>
 
         <hr/>
 
+        <!-- Room 3 -->
         <div class="room" id="room3">
             <div class="image">
                 <img src="static/images/superiorRoom.jpeg" alt="">
@@ -313,62 +296,35 @@
                 <p>Our Superior Rooms are comfortable, roomy and elegant.</p>
                 <ul>
                     <li>Size: 280 sq ft</li>
-                    <li>Beds: 1 King(s)</li>
+                    <li>Beds: single King</li>
                 </ul>
                 <hr/>
                 <br/>
                 <div class="icons">
-
-                    <div class="am">
-                        <img id="am_ac" src="static/icons/AC.png" alt="">
-                        <span class="span_am"> A/C </span>
-                    </div>
-                    <div class="am">
-                        <img id="am_wifi" src="static/icons/wifi.png" alt="">
-                        <span class="span_am">wifi</span>
-                    </div>
-                    <div class="am">
-                        <img id="am_tv" src="static/icons/tv.png" alt="">
-                        <span class="span_am"> TV </span>
-                    </div>
-                    <div class="am">
-                        <img id="am_safe" src="static/icons/safe.png" alt="">
-                        <span class="span_am"> safe </span>
-                    </div>
-                    <div class="am">
-                        <img id="am_minibar" src="static/icons/minibar.png" alt="">
-                        <span class="span_am"> bar </span>
-                    </div>
-                    <div class="am">
-                        <img id="am_telephone" src="static/icons/telephone.png" alt="">
-                        <span class="span_am"> phone </span>
-                    </div>
-                    <div class="am">
-                        <img id="am_kitchen" src="static/icons/kitchen.png" alt="">
-                        <span class="span_am"> kitchen</span>
-                    </div>
-                    <div class="am">
-                        <img id="am_shower" src="static/icons/shower.png" alt="">
-                        <span class="span_am"> shower </span>
-                    </div>  
-                    <div class="am">
-                        <img id="am_bath" src="static/icons/bath.png" alt="">
-                        <span class="span_am"> bath </span>
-                    </div>
-                    <div class="am">
-                        <img id="am_workspace" src="static/icons/workspace.png" alt="">
-                        <span class="span_am"> work </span>
-                    </div>
+                    <div class="am"><img id="am_ac" src="static/icons/AC.png" alt=""><span class="span_am"> A/C </span></div>
+                    <div class="am"><img id="am_wifi" src="static/icons/wifi.png" alt=""><span class="span_am">wifi</span></div>
+                    <div class="am"><img id="am_tv" src="static/icons/tv.png" alt=""><span class="span_am"> TV </span></div>
+                    <div class="am"><img id="am_safe" src="static/icons/safe.png" alt=""><span class="span_am"> safe </span></div>
+                    <div class="am"><img id="am_minibar" src="static/icons/minibar.png" alt=""><span class="span_am"> bar </span></div>
+                    <div class="am"><img id="am_telephone" src="static/icons/telephone.png" alt=""><span class="span_am"> phone </span></div>
+                    <div class="am"><img id="am_kitchen" src="static/icons/kitchen.png" alt=""><span class="span_am"> kitchen</span></div>
+                    <div class="am"><img id="am_shower" src="static/icons/shower.png" alt=""><span class="span_am"> shower </span></div>  
+                    <div class="am"><img id="am_bath" src="static/icons/bath.png" alt=""><span class="span_am"> bath </span></div>
+                    <div class="am"><img id="am_workspace" src="static/icons/workspace.png" alt=""><span class="span_am"> work </span></div>
                 </div>
             </div>
             <div class="price">
                 <p>From</p>
                 <h1>₹ 27,000</h1>
-                <form action="">
-                    <button class="book_now" type="submit">
-                        <a href="./checkout.html">Book Now</a> 
-                    </button>
-                </form>
+                <form action="static/book_room.php" method="POST">
+    <input type="hidden" name="room_id" value="R3">
+    <input type="hidden" name="room_name" value="Superior Room">
+    <input type="hidden" name="room_size" value="280 sq ft">
+    <input type="hidden" name="room_bed" value="Single King">
+    <input type="hidden" name="price" value="27000">
+    <button class="book_now" type="submit">Book Now</button>
+</form>
+
             </div>
         </div>
     </div>
@@ -421,6 +377,23 @@
     <div class="footer" style="padding-top: 1%;">
         <p>Made with &#10084; by <a href="https://github.com/AviralJ58" class="profiles">Aviral Jain</a>, <a href="https://github.com/hiteshdaga" class="profiles">Hitesh Daga</a> and <a href="https://github.com/vidipt-khetriwal" class="profiles">Vidipt Khetriwal</a></p>
     </div>
+
+    <!-- JavaScript for search filter -->
+    <script>
+        function filterRooms() {
+            let input = document.getElementById("roomSearch").value.toLowerCase();
+            let rooms = document.getElementsByClassName("room");
+
+            for (let i = 0; i < rooms.length; i++) {
+                let bedInfo = rooms[i].getElementsByTagName("ul")[0].innerText.toLowerCase();
+                if (bedInfo.includes(input)) {
+                    rooms[i].style.display = "flex";
+                } else {
+                    rooms[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>

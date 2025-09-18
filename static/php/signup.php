@@ -2,7 +2,7 @@
 $servername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "HotelDB";
+$dbname = "hoteldb";
 
 $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
 if ($conn->connect_error) {
@@ -44,7 +44,7 @@ $stmt->bind_param("sssss", $username, $password, $email, $address, $phone);
 
 if ($stmt->execute()) {
          echo "<h3 style='color:green;'>Registration successful!</h3>";
-         echo "<a href='login.html'>Click here to Login</a>";
+         echo "<a href='../../login.html'>Click here to Login</a>";
 } else {
          echo "<h3 style='color:red;'>Error: " . $conn->error . "</h3>";
 }

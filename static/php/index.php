@@ -1,7 +1,8 @@
+<?php include '../php/navbar.php'; ?>
 <!DOCTYPE html>
     <head>
-        <link rel="stylesheet" href="static/stylesheet/navbar.css">
-        <link rel="stylesheet" href="static/stylesheet/external.css">
+        <link rel="stylesheet" href="../stylesheet/navbar.css">
+        <link rel="stylesheet" href="../stylesheet/external.css">
     </head>
     <style>
         .navbar_a:hover{
@@ -12,43 +13,7 @@
 
     <body>
         <!-- navigation bar -->
-        <nav class="navbar">
-            <div class="navbar-container">
-                <div class="navbar-brand">
-                    <a class="navbar_a" href="#">Grand Elegance</a> 
-                </div>
-                <div class="navbar-contents">
-                    <div class="navbar_home navbar-element">
-                        <a class="navbar_a" href="index.html">HOME</a>
-                    </div>
-                    <div class="navbar_about navbar-element">
-                        <a class="navbar_a" href="aboutus.html">ABOUT</a>
-                    </div>
-                    <div class="navbar_rooms navbar-element">
-                        <a class="navbar_a" href="#rooms-nav">ROOMS</a>
-                    </div>
-                    <div class="navbar_services navbar-element">
-                        <a class="navbar_a" href="#services-nav">SERVICES</a>
-                    </div>
-                    <div class="navbar_gallery navbar-element">
-                        <a class="navbar_a" href="#gallery-nav">GALLERY</a>
-                    </div>
-                    <div class="navbar_reviews navbar-element">
-                        <a class="navbar_a" href="#review">REVIEWS</a>
-                    </div>
-                    <div class="navbar_contact navbar-element">
-                        <a class="navbar_a" href="#contact-nav">CONTACT</a>
-                    </div>
-                    <div class="navbar_bookaroom navbar-element">
-                        <a class="navbar_a" href="./book_page1.html">Book A Room</a>
-                    </div>
-                    <div class="navbar_login navbar-element">
-                        <a class="navbar_a" href="./login.html">Login</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
+     
         <!-- home -->
 
         <div class="home" id="home-nav">
@@ -73,9 +38,9 @@
         
         <div class="our_rooms" id="rooms-nav">
             <div class="room_slideshow">
-                <img class="room_img" src="static/images/room1.jpeg">
-                <img class="room_img" src="static/images/room.jpg">
-                <img class="room_img" src="static/images/room3.jpeg">
+                <img class="room_img" src="../images/room1.jpeg">
+                <img class="room_img" src="../images/room.jpg">
+                <img class="room_img" src="../images/room3.jpeg">
                 <div class="text-block_r">
                     <div class="reviews_r">
                         <div class="review_header_r">
@@ -127,29 +92,29 @@
             <h2 class="heading"> OUR SERVICES </h2>
             <div class="services">
                 <figure>
-                    <img src="static/icons/breakfast.png" alt="Breakfast" height="40px" class="icons"/>
+                    <img src="../icons/breakfast.png" alt="Breakfast" height="40px" class="icons"/>
                     <figcaption> Breakfast<br><p class="caption">Complimentary breakfast is made available for all the guests staying at AHV resorts. Buffet with a huge variety to choose from opens daily!</p> </figcaption>
                 </figure>
                 <figure>
-                    <img src="static/icons/garden.png" alt="Garden" height="40px" class="icons"/>
+                    <img src="../icons/garden.png" alt="Garden" height="40px" class="icons"/>
                     <figcaption> Garden<br><p class="caption">Various plants surround guests as they indulge in specialty cocktails and gaze at the stunning views. It's the perfect after-hours spot for outdoor enthusiasts!</p> </figcaption>
                 </figure>
                 <figure>
-                    <img src="static/icons/pool.png" alt="Pool" height="40px" class="icons"/>
+                    <img src="../icons/pool.png" alt="Pool" height="40px" class="icons"/>
                     <figcaption> Pool<br><p class="caption">Outdoor swimming pool is adjacent to the lovely lawns, guaranteed to make every moment of your stay at the hotel a fun-filled, rejuvenating one.</p> </figcaption>
                 </figure>
             </div>
             <div class="services">
                 <figure>
-                    <img src="static/icons/wifi.png" alt=" Wifi " height="40px" class="icons"/>
+                    <img src="..icons/wifi.png" alt=" Wifi " height="40px" class="icons"/>
                     <figcaption>Wifi<br><p class="caption">Free high-speed wifi available in every room and in all the common areas with unlimited data usage.</p> </figcaption>
                 </figure>
                 <figure>
-                    <img src="static/icons/room service.png" alt="Room Service" height="40px" class="icons"/>
+                    <img src="..icons/room service.png" alt="Room Service" height="40px" class="icons"/>
                     <figcaption> Room Service<br><p class="caption">Room service available on just a call. Provides help for all kind of requests in a very short time.</p> </figcaption>
                 </figure>
                 <figure>
-                    <img src="static/icons/housekeeping.png" alt="Housekeeping" height="40px" class="icons"/>
+                    <img src="../icons/housekeeping.png" alt="Housekeeping" height="40px" class="icons"/>
                     <figcaption> Housekeeping<br><p class="caption">Time-to-time cleaning of rooms will be done to provide our guests a better experience!</p> </figcaption>
                 </figure>
             </div>
@@ -163,19 +128,19 @@
 
                 <div class="mySlides fade">
                     <div class="numbertext">1 / 3</div>
-                    <img src="static/images/hotel1.jpg" style="width:100%" height="500px">
+                    <img src="../images/hotel1.jpg" style="width:100%" height="500px">
                     <div class="text">Swimming Pool</div>
                 </div>
             
                 <div class="mySlides fade">
                     <div class="numbertext">2 / 3</div>
-                    <img src="static/images/image2.jpg" style="width:100%" height="500px">
+                    <img src="../images/image2.jpg" style="width:100%" height="500px">
                     <div class="text">Room</div>
                 </div>
             
                 <div class="mySlides fade">
                     <div class="numbertext">3 / 3</div>
-                    <img src="static/images/image3.jpg" style="width:100%" height="500px">
+                    <img src="../images/image3.jpg" style="width:100%" height="500px">
                     <div class="text">Lobby</div>
                 </div>
             
@@ -221,7 +186,7 @@
                 <div class="reviews">
                     <div class="review_header">
                         <h3 class="heading">Guest Review</h3>
-                        <img src="static/icons/quote.png" height="20px">
+                        <img src="../icons/quote.png" height="20px">
                     </div>
                     <div class="review_text">
                         <p><span id="spin"></span></p>
