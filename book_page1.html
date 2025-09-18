@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="static/stylesheet/external.css">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .background{
+        width: 100%;
+        height: 100%;
+        opacity: 0.7;
+    }
+    .form{
+        background-color: white;
+        border-radius: 10px;
+        position: absolute;
+        padding: 2%;
+        width: 20%;
+        top: 25%;
+        left: 10%;
+    }
+    .text_reserv{
+        position: absolute;
+        top: 42%;
+        right: 10%;
+        width: 25%;
+        text-align: center;
+        background-color: rgb(53, 41, 41, 0.5);
+    }
+
+    .heading_reserv{
+        font-weight: 900;
+        font-size: 250%;
+        color: white;
+        
+    }
+    .paragraph{
+        color: white;
+    }
+
+    form label{
+        font-size: 15px;
+    }
+    #check-in-date,
+    #check-out-date,
+    #rooms,
+    #adults,
+    #children,
+    .btn{
+        padding: 3%;
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid burlywood;
+        margin-bottom: 7%;
+    }
+    #check-in-date:focus,
+    #check-out-date:focus,
+    #rooms:focus,
+    #adults:focus,
+    #children:focus{
+        outline: none;
+        border: 2px solid burlywood;
+        
+    }
+    .btn a{
+        text-decoration: none;
+        color: white;
+    }
+    .btn{
+        background-color: burlywood;
+        margin-top: 5%;
+        color: white;
+        padding: 3%;
+        font-size: 100%;
+    }
+</style>
+<body>
+    <div class="container">
+        <img class="background" src="static/images/background.jpg" alt="">
+    </div>
+
+    <div class="form">
+        <form action="./book_page2.html" name="search_form">
+            <label for="check-in">
+                <center>Check In</center>
+                <input class="input" id="check-in-date" type="text" placeholder="DD/MM/YYYY" onfocus="(this.type='date')" required name="check_in_date" onblur="checkinValid()">
+                <br/>
+            </label>
+            <label for="check-out">
+                <center>Check Out</center>
+                <input class="input" id="check-out-date" type="text" placeholder="DD/MM/YYYY" onfocus="(this.type='date')" min=#check-in-date.date required name="check_out_date" onblur="checkoutValid()">
+                <br/>
+            </label>
+            <label for="no-of-rooms">
+                <center>Rooms</center>
+                <input class="input" type="number" name="rooms" id="rooms" placeholder="Rooms" min="1" required><br/>
+            </label>
+            <label for="no-of-adults">
+                <center>Adults</center>
+                <input class="input" type="number" name="adults" id="adults" placeholder="Adults" min="1" required><br/>
+            </label>
+            <label for="no-of-children">
+                <center>Children</center>
+                <input class="input" type="number" name="children" id="children" placeholder="Children" min="0" required><br/>
+            </label>
+            <button class="btn" type="submit" onclick="button()">Search</button>
+
+        </form>
+    </div>
+
+    <div class="text_reserv">
+        <div class="heading_reserv">MAKE &nbsp;YOUR &nbsp;RESERVATION</div>
+    </div>
+
+    <!-- contact  -->
+
+    <div class="contact" id="contact-nav" style="margin-block-start: 0;">
+        <h2 class="heading">CONTACT US</h2>
+        <div class="con_info">
+            <p><a href="mailto:info@mysite.com">info@mysite.com</a> &nbsp; &nbsp; &nbsp;/&nbsp; &nbsp; &nbsp;Vellore Institute of Technology&nbsp; &nbsp; &nbsp;/&nbsp; &nbsp; &nbsp;Tel: +91 9876543210</p>
+        </div>
+
+        <div class="feedback">
+            <form name='feedback' action='POST' class="feedback_form">
+                <table>
+                    <tr>
+                        <td><label for='name'>Enter your Name</label></td>
+                        <td><label for='email'>Enter your Email</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder="Name" required id='name'/></td>
+                        <td><input type="email" placeholder="Email" required id='email'/></td>
+                    </tr>
+                    <tr>
+                        <td><label for='sub'>Enter the Subject</label></td>
+                    </tr>
+                    <tr>
+                        <td colspan=2><input type="text" placeholder="Subject" required id='sub'/></td>
+                    </tr>
+                    <tr>
+                        <td><label for='msg'>Enter the Message</label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><textarea rows=10 cols=33 id='msg' required placeholder="Message"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan=2><input type="submit" id='submit'/></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <div id="googleMap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.001696423075!2d79.15722781480746!3d12.97174299085577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad479f0ccbe067%3A0xfef222e5f36ecdeb!2sVellore%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1632491651180!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <div class="footer">
+        <p>Made with &#10084; by <a href="https://github.com/AviralJ58" class="profiles">Aviral Jain</a>, <a href="https://github.com/hiteshdaga" class="profiles">Hitesh Daga</a> and <a href="https://github.com/vidipt-khetriwal" class="profiles">Vidipt Khetriwal</a></p>
+    </div>
+
+
+    <script src="static/javascript/index.js"></script>
+</body>
+</html>
