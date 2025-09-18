@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+   <link rel="stylesheet" href="static/stylesheet/navbar.css">
+  <title>HotelDB - Sign Up</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('static/images/background.jpg') no-repeat center center/cover;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .signup-box {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 15px;
+      margin-top: 50px;
+      border-radius: 12px;
+      width: 400px;
+      text-align: center;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    }
+    .signup-box h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .signup-box input {
+      width: 90%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .signup-box button {
+      width: 95%;
+      padding: 12px;
+      background: rgb(189, 163, 45);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .signup-box button:hover {
+      background: #6d6801;
+    }
+    .login-link {
+      margin-top: 15px;
+      display: block;
+      color: #007bff;
+      text-decoration: none;
+    }
+    .login-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+
+
+<!-- navigation bar -->
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="navbar-brand">
+                    <a class="navbar_a" href="#">Grand Elegance</a> 
+                </div>
+                <div class="navbar-contents">
+                    <div class="navbar_home navbar-element">
+                        <a class="navbar_a" href="index.html">HOME</a>
+                    </div>
+                    <div class="navbar_about navbar-element">
+                        <a class="navbar_a" href="aboutus.html">ABOUT</a>
+                    </div>
+                    <div class="navbar_rooms navbar-element">
+                        <a class="navbar_a" href="#rooms-nav">ROOMS</a>
+                    </div>
+                   
+                    <div class="navbar_contact navbar-element">
+                        <a class="navbar_a" href="#contact-nav">CONTACT</a>
+                    </div>
+                    <div class="navbar_bookaroom navbar-element">
+                        <a class="navbar_a" href="./book_page1.html">Book A Room</a>
+                    </div>
+                    <div class="navbar_login navbar-element">
+                        <a class="navbar_a" href="./login.html">Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+
+  <div class="signup-box">
+    <h2>Create Account</h2>
+    <form action="/static/php/signup.php" method="POST">
+      <input type="text" name="username" placeholder="Enter Username" required>
+      <input type="password" name="password" placeholder="Enter Password" required>
+      <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+      <input type="email" name="email" placeholder="Enter Email" required>
+      <input type="text" name="address" placeholder="Enter Address" required>
+      <input type="text" name="phone" placeholder="Enter Phone Number" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account?<a class="login-link" href="login.html"> Login</a></p>
+  </div>
+</body>
+</html>

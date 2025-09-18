@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <link rel="stylesheet" href="static/stylesheet/navbar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Grand Elegance</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 100vh;
+        }
+
+        .about-image {
+            flex: 1;
+            background: url('static/images/hotel_ent.jpg') no-repeat center center/cover;
+            min-height: 400px;
+        }
+
+        .about-text {
+            flex: 1;
+            background: #fff;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-text h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+
+        .about-text p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+            }
+
+            .about-image, .about-text {
+                flex: 1 1 100%;
+            }
+
+            .about-text {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+
+          <nav class="navbar">
+            <div class="navbar-container">
+                <div class="navbar-brand">
+                    <a class="navbar_a" href="#">Grand Elegance</a> 
+                </div>
+                <div class="navbar-contents">
+                    <div class="navbar_home navbar-element">
+                        <a class="navbar_a" href="index.html">HOME</a>
+                    </div>
+                    <div class="navbar_about navbar-element">
+                        <a class="navbar_a" href="aboutus.html">ABOUT</a>
+                    </div>
+                    <div class="navbar_rooms navbar-element">
+                        <a class="navbar_a" href="#rooms-nav">ROOMS</a>
+                    </div>
+                   
+                    <div class="navbar_contact navbar-element">
+                        <a class="navbar_a" href="#contact-nav">CONTACT</a>
+                    </div>
+                    <div class="navbar_bookaroom navbar-element">
+                        <a class="navbar_a" href="./book_page1.html">Book A Room</a>
+                    </div>
+                    <div class="navbar_login navbar-element">
+                        <a class="navbar_a" href="./login.html">Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+
+    <div class="about-container">
+        <div class="about-image"></div>
+        <div class="about-text">
+            <h1>About Grand Elegance</h1>
+            <p>Welcome to <strong>Grand Elegance</strong>, where luxury meets comfort. Located in the heart of the city, our hotel offers a refined experience for travelers seeking sophistication, relaxation, and world-class service. From elegantly furnished rooms and suites to gourmet dining and modern amenities, every detail is designed to make your stay memorable.</p>
+            <p>Whether visiting for business, leisure, or a special occasion, our dedicated team ensures a seamless blend of style, comfort, and personalized service. At <strong>Grand Elegance</strong>, elegance is more than a name—it’s our promise to provide an unforgettable hospitality experience.</p>
+        </div>
+    </div>
+</body>
+</html>
